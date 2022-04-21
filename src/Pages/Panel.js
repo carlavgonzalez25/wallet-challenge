@@ -1,15 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import {
+  fetchUserFunds,
+  fetchUserFiatFunds,
+  fetchUserTransactions,
+} from "../Redux/actions/user";
+import { roundNumber } from "../Helpers/roundNumber";
+import { fetchCurrencies, fetchRates } from "../Redux/actions/currencies";
+
 import Funds from "../Components/Funds";
 import Converter from "../Components/Converter";
 import AccountCard from "../Components/AccountCard";
 import Transactions from "../Components/Transactions";
-import { fetchCurrencies, fetchRates } from "../Redux/actions/currencies";
-import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import { fetchUserFunds } from "../Redux/actions/user";
-import { roundNumber } from "../Helpers/roundNumber";
+import BuyForm from "../Components/BuyForm";
 
 const Panel = () => {
+  const [buyFormOpen, setBuyFormOpen] = useState({
+    isOpen: false,
+    ticker: null,
+  });
+
   const dispatch = useDispatch();
   const rates = useSelector(({ currencies }) => currencies.rates, shallowEqual);
 
@@ -22,6 +33,10 @@ const Panel = () => {
     ({ user }) => user.fundsByCurrency,
     shallowEqual
   );
+  const userARSFunds = useSelector(
+    ({ user }) => user.totalFundsARS,
+    shallowEqual
+  );
 
   /* console.log("rates ", rates);
   console.log("currencies ", currencies);
@@ -30,6 +45,8 @@ const Panel = () => {
     dispatch(fetchRates());
     dispatch(fetchCurrencies());
     dispatch(fetchUserFunds());
+    dispatch(fetchUserFiatFunds());
+    dispatch(fetchUserTransactions());
   }, [dispatch]);
 
   const getFunds = (ticker) => {
@@ -43,44 +60,64 @@ const Panel = () => {
       if (!userFunds.hasOwnProperty(ticker)) return 0;
 
       return `${roundNumber(
-        userFunds[ticker]?.funds * Number(rates[conversionTicker]?.sell_rate)
+        userFunds[ticker]?.funds *
+          parseFloat(rates[conversionTicker]?.sell_rate)
       )}`;
     } else return 0;
   };
 
   const getTotalFundsARS = () => {
-    return Object.keys(userFunds).reduce((acum, key) => {
-      return acum + Number(getARSConversion(key));
-    }, 0);
+    return (
+      userARSFunds +
+      Object.keys(userFunds).reduce((acum, key) => {
+        return acum + Number(getARSConversion(key));
+      }, 0)
+    );
+  };
+
+  const handleBuyForm = (isOpen, ticker) => {
+    setBuyFormOpen((prev) => ({ ...prev, isOpen, ticker }));
   };
 
   return (
-    <Container>
-      <Header>
-        <TextContainer>
-          <Title>Mi billetera</Title>
-          <Text>
-            En tu billetera vas a poder almacenar todas las criptomonedas que
-            compres en Ripio
-          </Text>
-        </TextContainer>
-        <Funds value={getTotalFundsARS()} />
-      </Header>
-      <Converter />
-      <CardsContainer>
-        {currencies.map((curr, i) => (
-          <AccountCard
-            name={curr.name}
-            funds={getFunds(curr.ticker)}
-            currency={curr.ticker}
-            icon={curr?.url_images?.image_svg || null}
-            conversion={"ARS " + getARSConversion(curr.ticker)}
-            key={curr.name + i}
-          />
-        ))}
-      </CardsContainer>
-      <Transactions />
-    </Container>
+    <>
+      <Container>
+        <Header>
+          <TextContainer>
+            <Title>Mi billetera</Title>
+            <Text>
+              En tu billetera vas a poder almacenar todas las criptomonedas que
+              compres en Ripio
+            </Text>
+          </TextContainer>
+          <Funds value={getTotalFundsARS()} />
+        </Header>
+        <Converter />
+        <CardsContainer>
+          {currencies.map((curr, i) => {
+            const ARS = "ARS";
+            return (
+              curr.ticker !== ARS && (
+                <AccountCard
+                  name={curr.name}
+                  funds={getFunds(curr.ticker)}
+                  currency={curr.ticker}
+                  icon={curr?.url_images?.image_svg || null}
+                  conversion={"ARS " + getARSConversion(curr.ticker)}
+                  key={curr.name + i}
+                  handleBuyForm={handleBuyForm}
+                />
+              )
+            );
+          })}
+        </CardsContainer>
+        <Transactions />
+      </Container>
+
+      {buyFormOpen.isOpen && (
+        <BuyForm handleBuyForm={handleBuyForm} ticker={buyFormOpen.ticker} />
+      )}
+    </>
   );
 };
 

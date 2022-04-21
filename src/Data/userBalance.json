@@ -1,0 +1,104 @@
+[
+  {
+    "ticker": "BTC",
+    "name": "Bitcoin",
+    "symbol": "BTC",
+    "funds": 0.00948
+  },
+  {
+    "ticker": "ETH",
+    "name": "Ether",
+    "symbol": "ETH",
+    "funds": 0.23456
+  },
+  {
+    "ticker": "USDC",
+    "name": "USD Coin",
+    "symbol": "USDC",
+    "funds": 300.32
+  },
+  {
+    "ticker": "LTC",
+    "name": "Litecoin",
+    "symbol": "LTC",
+    "funds": 0
+  },
+  {
+    "ticker": "DAI",
+    "name": "DAI",
+    "symbol": "DAI",
+    "funds": 0
+  },
+  {
+    "ticker": "AXS",
+    "name": "Axie Infinity",
+    "symbol": "AXS",
+    "funds": 0
+  },
+  {
+    "ticker": "BAT",
+    "name": "Basic Attention Token",
+    "symbol": "BAT",
+    "funds": 0
+  },
+  {
+    "ticker": "DOGE",
+    "name": "Dogecoin",
+    "symbol": "DOGE",
+    "funds": 0
+  },
+  {
+    "ticker": "SLP",
+    "name": "Smooth Love Potion",
+    "symbol": "SLP",
+    "funds": 0
+  },
+  {
+    "ticker": "UBI",
+    "name": "UBI",
+    "symbol": "UBI",
+    "funds": 0
+  },
+  {
+    "ticker": "USDT",
+    "name": "Tether",
+    "symbol": "USDT",
+    "funds": 0
+  },
+  {
+    "ticker": "AAVE",
+    "name": "AAVE",
+    "symbol": "AAVE",
+    "funds": 0
+  },
+  {
+    "ticker": "RPC",
+    "name": "Ripio Coin",
+    "symbol": "RPC",
+    "funds": 0
+  },
+  {
+    "ticker": "LINK",
+    "name": "Chainlink",
+    "symbol": "LINK",
+    "funds": 0
+  },
+  {
+    "ticker": "MANA",
+    "name": "MANA",
+    "symbol": "MANA",
+    "funds": 0
+  },
+  {
+    "ticker": "UNI",
+    "name": "UNI",
+    "symbol": "UNI",
+    "funds": 0
+  },
+  {
+    "ticker": "CHZ",
+    "name": "Chiliz",
+    "symbol": "CHZ",
+    "funds": 0
+  }
+]

@@ -8,10 +8,6 @@ import { useEffect } from "react";
 //TODO: aca podria crear un router para las secciones y mostrar la correspondiente
 
 function App() {
-  useEffect(() => {
-    //dispatch(fetchCurrencies());
-  }, []);
-
   return (
     <Container className="App">
       <Header />

@@ -2,13 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import { ReactComponent as More } from "../Assets/Icons/more.svg";
 
-const AccountCard = ({ name, funds, icon, conversion, currency }) => {
+const AccountCard = ({
+  name,
+  funds,
+  icon,
+  conversion,
+  currency,
+  handleBuyForm,
+}) => {
   return (
     <Container>
       <Header>
         <AccountName>Cuenta {name}</AccountName>
         <RightContainer>
-          <Buy>Comprar</Buy>
+          <Buy onClick={() => handleBuyForm(true, currency)}>Comprar</Buy>
           <StyledMoreIcon />
         </RightContainer>
       </Header>

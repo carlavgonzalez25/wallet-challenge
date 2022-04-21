@@ -28,7 +28,7 @@ const Container = styled.div`
   background: #f9f9f9;
 `;
 
-const Logo = styled.div``;
+const Logo = styled.h1``;
 
 const MenuContainer = styled.div`
   display: flex;

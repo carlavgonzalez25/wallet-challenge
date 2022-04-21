@@ -1,7 +1,14 @@
 import React from "react";
+import { shallowEqual, useSelector } from "react-redux";
 import styled from "styled-components";
+import { TRANSACTION_TYPE } from "../Constants/transactionTypes";
 
 const Transactions = () => {
+  const transactions = useSelector(
+    ({ user }) => user.transactions,
+    shallowEqual
+  );
+
   const titles = [
     "Fecha",
     "Tipo operacion",
@@ -19,22 +26,17 @@ const Transactions = () => {
           <TableTitle key={i + title}>{title}</TableTitle>
         ))}
       </Row>
-      <Row>
-        <Item>11/03/2018</Item>
-        <Item>Compra de BTC</Item>
-        <Item>Cuenta Pesos</Item>
-        <Item>Completado</Item>
-        <Item>-AR$ 5</Item>
-        <Item>+ 0.00948 BTC</Item>
-      </Row>
-      <Row>
-        <Item>11/03/2018</Item>
-        <Item>Compra de BTC</Item>
-        <Item>Cuenta Pesos</Item>
-        <Item>Completado</Item>
-        <Item>-AR$ 5</Item>
-        <Item>+ 0.00948 BTC</Item>
-      </Row>
+
+      {transactions.map((el, i) => (
+        <Row key={i}>
+          <Item>{el.date}</Item>
+          <Item>{TRANSACTION_TYPE[el.type].name + el.fee.currency}</Item>
+          <Item>{el.method}</Item>
+          <Item>{el.status}</Item>
+          <Item>{`${el.fee.amount} ${el.fee.currency}`}</Item>
+          <Item>{`${el.transaction_amount.amount} ${el.transaction_amount.currency}`}</Item>
+        </Row>
+      ))}
     </Container>
   );
 };

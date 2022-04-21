@@ -1,0 +1,16 @@
+[
+  {
+    "type": "BUY",
+    "date": "11/03/2021",
+    "method": "Cuenta en pesos",
+    "status": "Completada",
+    "fee": {
+      "amount": -5,
+      "currency": "ARS"
+    },
+    "transaction_amount": {
+      "amount": 0.00948,
+      "currency": "BTC"
+    }
+  }
+]
