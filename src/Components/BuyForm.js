@@ -4,30 +4,25 @@ import styled from "styled-components";
 import { buyCurrency } from "../Redux/actions/user";
 
 const BuyForm = ({ ticker, handleBuyForm }) => {
-  const [ARSValue, setARSValue] = useState(); //TODO: aca deberia ser el valor minimo
+  const [ARSValue, setARSValue] = useState();
   const [currencyValue, setCurrencyValue] = useState();
 
   const dispatch = useDispatch();
 
-  const rates = useSelector(({ currencies }) => currencies.rates, shallowEqual);
+  const rates = useSelector(
+    ({ currencies }) => currencies.ratesByCurrency,
+    shallowEqual
+  );
   const ARSFunds = useSelector(({ user }) => user.totalFundsARS, shallowEqual);
 
-  //TODO: validar que exita algun balance de esta moneda
   const currencyFunds = useSelector(
     ({ user }) => user.fundsByCurrency[ticker].funds,
     shallowEqual
   );
-  const funds = useSelector(({ user }) => user.fundsByCurrency, shallowEqual);
-  console.log("🚀 ~ file: BuyForm.js ~ line 27 ~ BuyForm ~ funds", funds);
-  console.log("🚀 ~ file: BuyForm.js ~ line 11 ~ BuyForm ~ ARSFunds", ARSFunds);
 
   const conversionTicker = `${ticker}_ARS`;
   const minBuyAmount = 2000;
   const buyRate = rates[conversionTicker]?.buy_rate;
-
-  const getAmount = () => {
-    return ARSValue / buyRate;
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,8 +35,23 @@ const BuyForm = ({ ticker, handleBuyForm }) => {
       currency: { [ticker]: { funds: newCurrencyBalance } },
     };
 
-    dispatch(buyCurrency({ currencyPayload })).then((res) =>
-      console.log("La transaccion se ejecuto !")
+    const transactionPayload = {
+      type: "BUY",
+      date: "11/03/2021",
+      method: "Cuenta en pesos",
+      status: "Completada",
+      fee: {
+        amount: -15,
+        currency: "ARS",
+      },
+      transaction_amount: {
+        amount: currencyValue,
+        currency: ticker,
+      },
+    };
+
+    dispatch(buyCurrency({ currencyPayload, transactionPayload })).then((res) =>
+      handleBuyForm(false, null)
     );
   };
 

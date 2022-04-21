@@ -22,10 +22,13 @@ const Panel = () => {
   });
 
   const dispatch = useDispatch();
-  const rates = useSelector(({ currencies }) => currencies.rates, shallowEqual);
+  const rates = useSelector(
+    ({ currencies }) => currencies.ratesByCurrency,
+    shallowEqual
+  );
 
   const currencies = useSelector(
-    ({ currencies }) => currencies.currencies,
+    ({ currencies }) => currencies.currenciesBycurrency,
     shallowEqual
   );
 
@@ -38,9 +41,6 @@ const Panel = () => {
     shallowEqual
   );
 
-  /* console.log("rates ", rates);
-  console.log("currencies ", currencies);
- */
   useEffect(() => {
     dispatch(fetchRates());
     dispatch(fetchCurrencies());
@@ -94,7 +94,7 @@ const Panel = () => {
         </Header>
         <Converter />
         <CardsContainer>
-          {currencies.map((curr, i) => {
+          {Object.values(currencies).map((curr, i) => {
             const ARS = "ARS";
             return (
               curr.ticker !== ARS && (

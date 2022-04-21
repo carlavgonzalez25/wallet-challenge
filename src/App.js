@@ -5,8 +5,6 @@ import Sidebar from "./Components/Sidebar";
 import Panel from "./Pages/Panel";
 import { useEffect } from "react";
 
-//TODO: aca podria crear un router para las secciones y mostrar la correspondiente
-
 function App() {
   return (
     <Container className="App">

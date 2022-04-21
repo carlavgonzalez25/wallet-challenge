@@ -30,7 +30,9 @@ const Transactions = () => {
       {transactions.map((el, i) => (
         <Row key={i}>
           <Item>{el.date}</Item>
-          <Item>{TRANSACTION_TYPE[el.type].name + el.fee.currency}</Item>
+          <Item>
+            {TRANSACTION_TYPE[el.type].name + el.transaction_amount.currency}
+          </Item>
           <Item>{el.method}</Item>
           <Item>{el.status}</Item>
           <Item>{`${el.fee.amount} ${el.fee.currency}`}</Item>

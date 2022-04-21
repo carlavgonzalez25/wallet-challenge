@@ -3,8 +3,7 @@ import {
   GET_USER_TRANSACTIONS,
   BUY_CURRENCY,
   GET_USER_FIAT_FUNDS,
-
-  //POST_TRANSACTION,
+  POST_TRANSACTION,
 } from "../../actionTypes";
 import userFunds from "../../Data/userBalance.json";
 import userFiatFunds from "../../Data/userFiatBalance.json";
@@ -32,20 +31,18 @@ export const fetchUserFiatFunds = () => (dispatch) => {
   });
 };
 
-//TODO: falta implementar el transactions
 export const fetchUserTransactions = () => (dispatch) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve([]);
+      resolve();
       dispatch({ type: GET_USER_TRANSACTIONS, payload: [...userTransactions] });
     }, 300);
   });
 };
 
 export const buyCurrency =
-  ({ currencyPayload }) =>
+  ({ currencyPayload, transactionPayload }) =>
   (dispatch) => {
-    console.log("action, ", currencyPayload);
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve();
@@ -54,10 +51,21 @@ export const buyCurrency =
           payload: currencyPayload,
         });
       }, 300);
-    }); /* .then((res) => {
-      dispatch({
-        type: POST_TRANSACTION,
-        payload: [ticker, amountCurrency],
+    }).then(() => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve();
+          dispatch({ type: POST_TRANSACTION, payload: transactionPayload });
+        }, 300);
       });
-    }); */
+    });
   };
+
+export const postTransaction = (payload) => (dispatch) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve();
+      dispatch({ type: POST_TRANSACTION, payload });
+    }, 300);
+  });
+};

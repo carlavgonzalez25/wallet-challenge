@@ -7,7 +7,6 @@ import { ReactComponent as Savings } from "../Assets/Icons/savings.svg";
 import { ReactComponent as Trade } from "../Assets/Icons/trade.svg";
 import { ReactComponent as Rocket } from "../Assets/Icons/rocket.svg";
 
-//TODO: buscar icons
 // TODO: en el sections podria sumar un path y armar un router
 
 const Sidebar = () => {

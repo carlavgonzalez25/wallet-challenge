@@ -3,7 +3,7 @@ import {
   GET_USER_FUNDS,
   GET_USER_TRANSACTIONS,
   GET_USER_FIAT_FUNDS,
-  //POST_TRANSACTION,
+  POST_TRANSACTION,
 } from "../../actionTypes";
 import { mapKeys, merge } from "lodash";
 
@@ -12,8 +12,6 @@ const initialState = {
   fundsByCurrency: {},
   totalFundsARS: 0,
 };
-
-//TODO: chequear si totalFundsARS se usa
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -29,8 +27,11 @@ export default (state = initialState, action) => {
         fundsByCurrency: merge(state.fundsByCurrency, action.payload.currency),
         totalFundsARS: action.payload.totalFundsARS,
       };
-    /* case POST_TRANSACTION:
-      return { ...state }; */
+    case POST_TRANSACTION:
+      return {
+        ...state,
+        transactions: [...state.transactions, action.payload],
+      };
     default:
       return { ...state };
   }
