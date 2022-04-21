@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { ReactComponent as More } from "../Assets/Icons/more.svg";
 
 const AccountCard = ({ name, funds, icon, conversion, currency }) => {
   return (
@@ -8,7 +9,7 @@ const AccountCard = ({ name, funds, icon, conversion, currency }) => {
         <AccountName>Cuenta {name}</AccountName>
         <RightContainer>
           <Buy>Comprar</Buy>
-          <span>...</span>
+          <StyledMoreIcon />
         </RightContainer>
       </Header>
       <FundsContainer>
@@ -77,4 +78,14 @@ const Conversion = styled.p`
   font-size: 16px;
   line-height: 20px;
   color: #a5a7af;
+`;
+
+const StyledMoreIcon = styled(More)`
+  height: 16px;
+  width: auto;
+  fill: #7908ff;
+  margin-left: 6px;
+  &:hover {
+    cursor: pointer;
+  }
 `;

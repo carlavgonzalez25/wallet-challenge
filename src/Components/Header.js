@@ -25,6 +25,7 @@ const Container = styled.div`
   justify-content: space-between;
   padding: 25px 30px;
   height: 5%;
+  background: #f9f9f9;
 `;
 
 const Logo = styled.div``;

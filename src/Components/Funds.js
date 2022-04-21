@@ -4,13 +4,14 @@ import styled from "styled-components";
 //TODO: podria hacer un helper formateador de moneda
 // El fund debe venir de redux
 
-const Funds = () => {
-  return <Container>$ 980000.00 ARS</Container>;
+const Funds = ({ value }) => {
+  return <Value>$ {value} ARS</Value>;
 };
 
 export default Funds;
 
-const Container = styled.div`
+const Value = styled.h4`
   display: flex;
   margin-right: 30px;
+  font-size: 20px;
 `;

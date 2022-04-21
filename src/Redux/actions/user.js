@@ -1,5 +1,5 @@
 import { GET_USER_FUNDS, GET_USER_TRANSACTIONS } from "../../actionTypes";
-import userFunds from "../../Assets/json/userFunds.json";
+import userFunds from "../../Data/userFunds.json";
 
 export const fetchUserFunds = () => (dispatch) => {
   return new Promise((resolve, reject) => {

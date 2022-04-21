@@ -1,6 +1,6 @@
 import { GET_RATES, GET_CURRENCIES } from "../../actionTypes";
-import currencies from "../../Assets/json/currencies.json";
-import rates from "../../Assets/json/rates.json";
+import currencies from "../../Data/currencies.json";
+import rates from "../../Data/rates.json";
 
 //import axios from "axios";
 

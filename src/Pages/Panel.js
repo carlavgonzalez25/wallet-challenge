@@ -23,9 +23,9 @@ const Panel = () => {
     shallowEqual
   );
 
-  console.log("rates ", rates);
+  /* console.log("rates ", rates);
   console.log("currencies ", currencies);
-
+ */
   useEffect(() => {
     dispatch(fetchRates());
     dispatch(fetchCurrencies());
@@ -42,10 +42,16 @@ const Panel = () => {
     if (rates.hasOwnProperty(conversionTicker)) {
       if (!userFunds.hasOwnProperty(ticker)) return 0;
 
-      return `ARS ${roundNumber(
+      return `${roundNumber(
         userFunds[ticker]?.funds * Number(rates[conversionTicker]?.sell_rate)
       )}`;
     } else return 0;
+  };
+
+  const getTotalFundsARS = () => {
+    return Object.keys(userFunds).reduce((acum, key) => {
+      return acum + Number(getARSConversion(key));
+    }, 0);
   };
 
   return (
@@ -58,7 +64,7 @@ const Panel = () => {
             compres en Ripio
           </Text>
         </TextContainer>
-        <Funds />
+        <Funds value={getTotalFundsARS()} />
       </Header>
       <Converter />
       <CardsContainer>
@@ -68,7 +74,7 @@ const Panel = () => {
             funds={getFunds(curr.ticker)}
             currency={curr.ticker}
             icon={curr?.url_images?.image_svg || null}
-            conversion={getARSConversion(curr.ticker)}
+            conversion={"ARS " + getARSConversion(curr.ticker)}
             key={curr.name + i}
           />
         ))}
@@ -92,6 +98,7 @@ const Header = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  margin: 16px;
 `;
 
 const TextContainer = styled.div`
