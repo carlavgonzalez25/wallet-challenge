@@ -1,0 +1,44 @@
+[
+  {
+    "ticker": "ARS",
+    "name": "Pesos",
+    "symbol": "$",
+    "funds": 356222
+  },
+  {
+    "ticker": "BTC",
+    "name": "Bitcoin",
+    "symbol": "BTC",
+    "funds": 0.00948
+  },
+  {
+    "ticker": "ETH",
+    "name": "Ether",
+    "symbol": "ETH",
+    "funds": 1.23456
+  },
+  {
+    "ticker": "USDC",
+    "name": "USD Coin",
+    "symbol": "USDC",
+    "funds": 256.32
+  },
+  {
+    "ticker": "LTC",
+    "name": "Litecoin",
+    "symbol": "LTC",
+    "funds": 53.3312
+  },
+  {
+    "ticker": "DAI",
+    "name": "DAI",
+    "symbol": "DAI",
+    "funds": 523.33312
+  },
+  {
+    "ticker": "AXS",
+    "name": "Axie Infinity",
+    "symbol": "AXS",
+    "funds": 456.3336
+  }
+]

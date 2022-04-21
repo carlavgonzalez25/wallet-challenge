@@ -1,11 +1,53 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Funds from "../Components/Funds";
 import Converter from "../Components/Converter";
 import AccountCard from "../Components/AccountCard";
 import Transactions from "../Components/Transactions";
+import { fetchCurrencies, fetchRates } from "../Redux/actions/currencies";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { fetchUserFunds } from "../Redux/actions/user";
+import { roundNumber } from "../Helpers/roundNumber";
 
 const Panel = () => {
+  const dispatch = useDispatch();
+  const rates = useSelector(({ currencies }) => currencies.rates, shallowEqual);
+
+  const currencies = useSelector(
+    ({ currencies }) => currencies.currencies,
+    shallowEqual
+  );
+
+  const userFunds = useSelector(
+    ({ user }) => user.fundsByCurrency,
+    shallowEqual
+  );
+
+  console.log("rates ", rates);
+  console.log("currencies ", currencies);
+
+  useEffect(() => {
+    dispatch(fetchRates());
+    dispatch(fetchCurrencies());
+    dispatch(fetchUserFunds());
+  }, [dispatch]);
+
+  const getFunds = (ticker) => {
+    return userFunds.hasOwnProperty(ticker) ? userFunds[ticker].funds : 0;
+  };
+
+  const getARSConversion = (ticker) => {
+    const conversionTicker = `${ticker}_ARS`;
+
+    if (rates.hasOwnProperty(conversionTicker)) {
+      if (!userFunds.hasOwnProperty(ticker)) return 0;
+
+      return `ARS ${roundNumber(
+        userFunds[ticker]?.funds * Number(rates[conversionTicker]?.sell_rate)
+      )}`;
+    } else return 0;
+  };
+
   return (
     <Container>
       <Header>
@@ -20,34 +62,16 @@ const Panel = () => {
       </Header>
       <Converter />
       <CardsContainer>
-        <AccountCard
-          name={"Bitcoin"}
-          funds={0.00948}
-          currency={"BTC"}
-          icon={null}
-          conversion={"AR$ 1290"}
-        ></AccountCard>
-        <AccountCard
-          name={"Bitcoin"}
-          funds={0.00948}
-          currency={"BTC"}
-          icon={null}
-          conversion={"AR$ 1290"}
-        ></AccountCard>
-        <AccountCard
-          name={"Bitcoin"}
-          funds={0.00948}
-          currency={"BTC"}
-          icon={null}
-          conversion={"AR$ 1290"}
-        ></AccountCard>
-        <AccountCard
-          name={"Bitcoin"}
-          funds={0.00948}
-          currency={"BTC"}
-          icon={null}
-          conversion={"AR$ 1290"}
-        ></AccountCard>
+        {currencies.map((curr, i) => (
+          <AccountCard
+            name={curr.name}
+            funds={getFunds(curr.ticker)}
+            currency={curr.ticker}
+            icon={curr?.url_images?.image_svg || null}
+            conversion={getARSConversion(curr.ticker)}
+            key={curr.name + i}
+          />
+        ))}
       </CardsContainer>
       <Transactions />
     </Container>

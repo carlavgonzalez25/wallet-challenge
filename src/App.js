@@ -3,10 +3,15 @@ import styled from "styled-components";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import Panel from "./Pages/Panel";
+import { useEffect } from "react";
 
 //TODO: aca podria crear un router para las secciones y mostrar la correspondiente
 
 function App() {
+  useEffect(() => {
+    //dispatch(fetchCurrencies());
+  }, []);
+
   return (
     <Container className="App">
       <Header />
@@ -23,7 +28,7 @@ export default App;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 const Content = styled.div`

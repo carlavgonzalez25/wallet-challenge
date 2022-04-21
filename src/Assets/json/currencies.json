@@ -1,0 +1,332 @@
+[
+  {
+    "ticker": "ARS",
+    "name": "Pesos",
+    "symbol": "$",
+    "decimals": 2,
+    "type": "FIAT",
+    "actions": [
+      { "action": "DEPOSIT", "enabled": true },
+      { "action": "WITHDRAWAL", "enabled": true },
+      { "action": "SEND", "enabled": true },
+      { "action": "RECEIVE", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/ARS.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/ARS.svg"
+    },
+    "color": null,
+    "categories": [],
+    "is_favorite": false
+  },
+  {
+    "ticker": "BTC",
+    "name": "Bitcoin",
+    "symbol": "BTC",
+    "decimals": 8,
+    "type": "CRYPTO",
+    "actions": [
+      { "action": "SEND", "enabled": true },
+      { "action": "RECEIVE", "enabled": true },
+      { "action": "BUY", "enabled": true },
+      { "action": "SELL", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/BTC.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/BTC.svg"
+    },
+    "color": "#feb402",
+    "categories": [],
+    "is_favorite": false
+  },
+  {
+    "ticker": "ETH",
+    "name": "Ether",
+    "symbol": "ETH",
+    "decimals": 18,
+    "type": "CRYPTO",
+    "actions": [
+      { "action": "RECEIVE", "enabled": true },
+      { "action": "SEND", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/ETH.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/ETH.svg"
+    },
+    "color": "#333333",
+    "categories": [],
+    "is_favorite": false
+  },
+  {
+    "ticker": "USDC",
+    "name": "USD Coin",
+    "symbol": "USDC",
+    "decimals": 6,
+    "type": "ERC20_TOKEN",
+    "actions": [
+      { "action": "RECEIVE", "enabled": true },
+      { "action": "SEND", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/USDC.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/USDC.svg"
+    },
+    "color": "#2776ca",
+    "categories": [],
+    "is_favorite": false
+  },
+  {
+    "ticker": "LTC",
+    "name": "Litecoin",
+    "symbol": "LTC",
+    "decimals": 8,
+    "type": "CRYPTO",
+    "actions": [
+      { "action": "RECEIVE", "enabled": true },
+      { "action": "SEND", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/LTC.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/LTC.svg"
+    },
+    "color": "#b9b9b9",
+    "categories": [],
+    "is_favorite": false
+  },
+  {
+    "ticker": "DAI",
+    "name": "DAI",
+    "symbol": "DAI",
+    "decimals": 18,
+    "type": "ERC20_TOKEN",
+    "actions": [
+      { "action": "RECEIVE", "enabled": true },
+      { "action": "SEND", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/DAI.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/DAI.svg"
+    },
+    "color": "#fd024f",
+    "categories": [],
+    "is_favorite": false
+  },
+  {
+    "ticker": "AXS",
+    "name": "Axie Infinity",
+    "symbol": "AXS",
+    "decimals": 18,
+    "type": "ERC20_TOKEN",
+    "actions": [
+      { "action": "SEND", "enabled": true },
+      { "action": "RECEIVE", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/AXS.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/AXS.svg"
+    },
+    "color": "#07caee",
+    "categories": [],
+    "is_favorite": false
+  },
+  {
+    "ticker": "BAT",
+    "name": "Basic Attention Token",
+    "symbol": "BAT",
+    "decimals": 18,
+    "type": "ERC20_TOKEN",
+    "actions": [
+      { "action": "SEND", "enabled": true },
+      { "action": "RECEIVE", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/BAT.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/BAT.svg"
+    },
+    "color": "#ff4724",
+    "categories": [],
+    "is_favorite": false
+  },
+  {
+    "ticker": "DOGE",
+    "name": "Dogecoin",
+    "symbol": "DOGE",
+    "decimals": 8,
+    "type": "CRYPTO",
+    "actions": [
+      { "action": "RECEIVE", "enabled": true },
+      { "action": "SEND", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/DOGE.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/DOGE.svg"
+    },
+    "color": "#c2a633",
+    "categories": [],
+    "is_favorite": false
+  },
+  {
+    "ticker": "SLP",
+    "name": "Smooth Love Potion",
+    "symbol": "SLP",
+    "decimals": 0,
+    "type": "ERC20_TOKEN",
+    "actions": [
+      { "action": "RECEIVE", "enabled": true },
+      { "action": "SEND", "enabled": true },
+      { "action": "SWAP", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/SLP.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/SLP.svg"
+    },
+    "color": "#55bb93",
+    "categories": [],
+    "is_favorite": false
+  },
+  {
+    "ticker": "UBI",
+    "name": "UBI",
+    "symbol": "UBI",
+    "decimals": 18,
+    "type": "ERC20_TOKEN",
+    "actions": [
+      { "action": "SEND", "enabled": true },
+      { "action": "RECEIVE", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/UBI.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/UBI.svg"
+    },
+    "color": "#00D9A1",
+    "categories": [],
+    "is_favorite": false
+  },
+  {
+    "ticker": "USDT",
+    "name": "Tether",
+    "symbol": "USDT",
+    "decimals": 6,
+    "type": "ERC20_TOKEN",
+    "actions": [
+      { "action": "SEND", "enabled": true },
+      { "action": "RECEIVE", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/USDT.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/USDT.svg"
+    },
+    "color": "#53ae94",
+    "categories": [],
+    "is_favorite": false
+  },
+  {
+    "ticker": "AAVE",
+    "name": "AAVE",
+    "symbol": "AAVE",
+    "decimals": 18,
+    "type": "ERC20_TOKEN",
+    "actions": [
+      { "action": "SEND", "enabled": true },
+      { "action": "RECEIVE", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/AAVE.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/AAVE.svg"
+    },
+    "color": "#373D51",
+    "categories": [],
+    "is_favorite": false
+  },
+  {
+    "ticker": "RPC",
+    "name": "Ripio Coin",
+    "symbol": "RPC",
+    "decimals": 18,
+    "type": "ERC20_TOKEN",
+    "actions": [
+      { "action": "SEND", "enabled": true },
+      { "action": "RECEIVE", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/RPC.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/RPC.svg"
+    },
+    "color": "#FF7049",
+    "categories": [],
+    "is_favorite": false
+  },
+  {
+    "ticker": "LINK",
+    "name": "Chainlink",
+    "symbol": "LINK",
+    "decimals": 18,
+    "type": "ERC20_TOKEN",
+    "actions": [
+      { "action": "RECEIVE", "enabled": true },
+      { "action": "SEND", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/LINK.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/LINK.svg"
+    },
+    "color": "#375bd2",
+    "categories": [],
+    "is_favorite": false
+  },
+  {
+    "ticker": "MANA",
+    "name": "MANA",
+    "symbol": "MANA",
+    "decimals": 18,
+    "type": "ERC20_TOKEN",
+    "actions": [
+      { "action": "SEND", "enabled": true },
+      { "action": "RECEIVE", "enabled": true },
+      { "action": "SWAP", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/MANA.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/MANA.svg"
+    },
+    "color": "#FF7049",
+    "categories": [],
+    "is_favorite": false
+  },
+  {
+    "ticker": "UNI",
+    "name": "UNI",
+    "symbol": "UNI",
+    "decimals": 18,
+    "type": "ERC20_TOKEN",
+    "actions": [
+      { "action": "SEND", "enabled": true },
+      { "action": "RECEIVE", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/UNI.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/UNI.svg"
+    },
+    "color": "#ff007a",
+    "categories": [],
+    "is_favorite": false
+  },
+  {
+    "ticker": "CHZ",
+    "name": "Chiliz",
+    "symbol": "CHZ",
+    "decimals": 18,
+    "type": "ERC20_TOKEN",
+    "actions": [
+      { "action": "SEND", "enabled": true },
+      { "action": "RECEIVE", "enabled": true }
+    ],
+    "url_images": {
+      "image_png": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/PNG/CHZ.png",
+      "image_svg": "https://cmswagtail.s3.sa-east-1.amazonaws.com/crypto-assets/SVG/CHZ.svg"
+    },
+    "color": "#CD0124",
+    "categories": [],
+    "is_favorite": false
+  }
+]

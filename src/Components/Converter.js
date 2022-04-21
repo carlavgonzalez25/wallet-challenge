@@ -35,6 +35,9 @@ const Item = ({ name, options }) => {
 
 const Container = styled.div`
   display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 16px 0;
 `;
 
 const Name = styled.h1``;
@@ -50,6 +53,13 @@ const Input = styled.input``;
 
 const Button = styled.button`
   background: linear-gradient(90deg, #7908ff 0%, #8b43e0 100%);
-  padding: 16px 30px;
+  padding: 12px;
+  min-width: 200px;
   border-radius: 20px;
+  border: none;
+  color: #fff;
+  margin-left: 16px;
+  cursor: pointer;
+  max-height: 44px;
+  align-self: center;
 `;

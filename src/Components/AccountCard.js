@@ -6,8 +6,10 @@ const AccountCard = ({ name, funds, icon, conversion, currency }) => {
     <Container>
       <Header>
         <AccountName>Cuenta {name}</AccountName>
-        <Buy>Comprar</Buy>
-        <span>...</span>
+        <RightContainer>
+          <Buy>Comprar</Buy>
+          <span>...</span>
+        </RightContainer>
       </Header>
       <FundsContainer>
         <Image src={icon} />
@@ -39,9 +41,14 @@ const AccountName = styled.p`
   color: #a5a7af;
 `;
 
+const RightContainer = styled.span`
+  display: flex;
+`;
+
 const Buy = styled.a`
   color: #7908ff;
   cursor: pointer;
+  margin-right: 6px;
 `;
 
 const FundsContainer = styled.div`
@@ -53,10 +60,12 @@ const FundsContainer = styled.div`
 const Image = styled.img`
   width: 30px;
   height: auto;
+  margin-right: 5px;
 `;
 const Amount = styled.h1`
   font-size: 32px;
   font-weight: 500;
+  margin-right: 6px;
 `;
 const Currency = styled.h1`
   font-size: 32px;
